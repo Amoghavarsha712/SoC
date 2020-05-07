@@ -1,8 +1,8 @@
 module matrix_mult_vector
   #(parameter
-      M = 4,
-      N = 4,
-      DW = 8
+      M = 100, 
+      N = 100,
+      DW = 100
   )
   (
       input wire[(DW * N * M) -1 : 0] matrix_inp,
@@ -15,7 +15,7 @@ module matrix_mult_vector
 
   generate 
       for (i = 0; i < M; i = i + 1) begin: product_loop
-        
+        // instantiate 
         inner_product
           #(
                 .N(N),
